@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+    <link rel="stylesheet" href="./style.css" />
+    <title>NGO account</title>
+  </head>
+  <body>
+    <div class="cont">
+      <!-- header -->
+      <header>
+        <div class="searchbar">
+          <button id="user">User</button>
+          <button id="ngo">NGO</button>
+          <input type="text" placeholder="Search" id="text" />
+          <button id="search">Search</button>
+        </div>
+      <i class="fa fa-bars fa-2x burger" id="burger" aria-hidden="true">
+        <div class="menu" id="menu">
+          <button class="loc" id="maploc">Add Location</button>
+          <button class="file" id="upload">Upload image</button>
+          <input type="file" id="file" style="width: 0px; height: 0px; overflow: hidden;">
+          <button id="logout" class="logout">Logout</button>
+        </div>
+      </i>
+      </header>
+
+      <section class="sec">
+        <div class="image" id="profileImg">image</div>
+        <div class="info">
+          <p id="name">-------</p>
+          <p id="address">-------</p>
+          <p id="loc">------</p>
+        </div>
+      </section>
+
+      <!-- Create events notice -->
+      <section class="secA">
+        <h2>Create event notice</h2>
+        <div class="createEvent">
+          <input type="text" id="eventName" placeholder="Event Name" />
+          <input
+            type="date"
+            id="eventDate"
+            placeholder="Data (e.g: 1 april 2020)"
+          />
+          <input
+            type="text"
+            id="eventTime"
+            placeholder="Time (e.g: 10:48 pm)"
+          />
+          <textarea
+            name=""
+            id="eventAddress"
+            cols="30"
+            rows="5"
+            placeholder="Address"
+          ></textarea>
+          <button id="create">Create</button>
+        </div>
+
+        <div id="created" class="created">
+
+        </div>
+
+      </section>
+
+      <!-- Demographics -->
+      <section class="secB">
+        <h1>Demographics</h1>
+        <h2>Types of Donation</h2>
+        <canvas id="canvas_1"></canvas>
+        <h2>Age Demographics</h2>
+        <canvas id="canvas_2"></canvas>
+        <h2>Mode of Donation</h2>
+        <canvas id="canvas_3"></canvas>
+        <h2>Monetry Funds</h2>
+        <canvas id="canvas_4"></canvas>
+        <h2>Mode of payment</h2>
+        <canvas id="canvas_5"></canvas>
+      </section>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

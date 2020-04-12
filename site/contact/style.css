@@ -1,0 +1,169 @@
+/*------Universal changes------*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Arial Narrow Bold", sans-serif;
+}
+a {
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+}
+.burger {
+  display: none !important;
+  margin-left: auto;
+  margin-right: 1em;
+}
+.contact
+{
+  border-bottom: rgb(73, 223, 148) solid 2px;
+}
+
+/*----------------------------------Container--------------------------------------*/
+
+.cont {
+  width: 100%;
+  max-width: 1500px;
+  margin: 0px auto;
+  padding-top: 1em;
+
+  display: grid;
+  grid-gap: 1em;
+  grid-template-rows: 80px;
+  grid-template-columns: repeat(5, 1fr);
+  grid-auto-rows: auto;
+}
+@media (max-width: 720px) {
+ 
+  nav ul {
+    display: none !important;
+  }
+  .burger {
+    display: inline-block !important;
+  }
+  .secC,.secB
+  {
+      grid-column: 1 / -1;
+  }
+}
+
+/*--------------------------------Header--------------------------------------------*/
+
+header {
+  grid-column: 1 / -1;
+}
+nav ul,
+nav {
+  display: flex;
+}
+nav {
+  width: 100%;
+  height: 100%;
+  align-items: center;
+}
+nav img {
+  height: 100%;
+  margin-left: 1.5em;
+}
+nav ul {
+  align-items: center;
+  width: 55%;
+  min-width: 320px;
+  justify-content: space-around;
+  margin-left: auto;
+}
+nav a {
+  color: dimgray;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+nav a:hover {
+  color: rgb(73, 223, 148);
+}
+
+/*--------------------section A banner-------------------------------*/
+
+.banner {
+  background-image: url("../images/contact.jpg");
+  background-size: cover;
+  background-position: left;
+  background-repeat: no-repeat;
+  height: 100%;
+  min-height: 500px;
+
+  
+  grid-column: 1 / -1;
+}
+
+
+/*-----------------------------------Section B signup form-------------------------------------------*/
+
+.secB
+{
+    grid-column: 2 / span 3;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    padding-top: 1em;
+}
+@media (max-width: 750px)
+{
+    .secB
+    {
+        grid-column: 1 / -1;
+    }
+    .secB form
+    {
+        width: 80% !important;
+    }
+    .secB input,textarea
+    {
+        width: 80% !important;
+    }
+
+}
+.secB form
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+    width: 60%;
+    height: 85%;
+}
+.secB input
+{
+    width: 70%;
+    height: 10%;
+    padding-left: 1em;
+}
+textarea
+{
+  width: 70%;
+  height: auto;
+  padding-left: 1em;
+  padding-top: 1em;
+}
+.secB h1
+{
+    color: gray;
+}
+
+.secB button
+{
+    padding: .5em 1em;
+    border: none;
+    background-color: rgb(255, 199, 95);
+    font-size: 1.2rem;
+    font-weight: 700;
+    cursor: pointer;
+    color: white;
+}
+
+ 
+

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+        integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+        crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+        integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+        crossorigin=""></script>
+    <title>User Account</title>
+</head>
+<body>
+    <a id="tosearch" href="../search/search.html" style="display: none;"></a>
+    <div class="cont">
+         
+        <!-- header -->
+        <header>
+            <div class="searchbar" id="searchbar">
+                <button id="user">Users</button>
+                <button id="ngo">NGOs</button>
+                <input type="text" placeholder="Search" id="text">
+                <button id="search">Search</button>
+            </div>
+            <i class="fa fa-bars fa-2x burger" id="burger" aria-hidden="true">
+                <div class="menu" id="menu">
+                    <button class="file" id="upload">Upload image</button>
+                    <input type="file" id="file" style="width: 0px; height: 0px; overflow: hidden;">
+                    <button id="logout" class="logout">Logout</button>
+                </div>
+            </i>
+        </header>
+
+
+        <aside>
+            <div class="image" id="profileImg">image</div>
+            <div class="info">
+                <p id="name">-----</p>
+                <p id="age">------</p>
+                <P id="loc">-------</P>
+            </div>
+        </aside>
+
+
+        <!-- map section -->
+        <section class="secA">
+            <h2>Find NGOs</h2>
+            <div id="mapid"></div>
+        </section>
+
+
+        <!-- notifiaction section -->
+        <section class="secB">
+            <p> Event Notifications</p>
+            <div id="created" class="created">
+            
+            </div>
+        </section>
+    </div>
+
+
+
+    <script src="./script.js"></script>
+</body>
+</html>

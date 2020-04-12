@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        init()
+        function init() {
+            if (localStorage.getItem("token") !== null) window.location.replace("../userAccount/userAccount.html");
+        }
+    </script>
+    <link rel="stylesheet" href="./style.css">
+    <title>Users Login</title>
+</head>
+<body>
+    <div class="cont">
+
+        <!-- Header -->
+        <header>
+            <h1>Let's Donate</h1>
+        
+            <form action="#">
+                <input type="text" id="Lemail" placeholder="Email">
+                <input type="password" class="password" id="Lpassword" placeholder="Password">
+                <button class="loginbtn" id="loginbtn">Login</button>
+            </form>
+        </header>
+
+        <section class="secA">
+            <div class="logo">asd</div>
+        </section>
+
+        <!-- Section B form -->
+        <section class="secB">
+            <h1>Sign Up</h1>
+            <form action="#">
+                <input type="text" id="username" placeholder="Name">
+                <input type="text" id="email" placeholder="Email">
+                <input type="text" id="age" placeholder="Age">
+                <input type="text" id="state" placeholder="State">
+                <input type="text" id="city" placeholder="City">
+                <input type="password" id="password" placeholder="Password">
+                <input type="password" id="reenter" placeholder="Confirm Password">
+                <button class="btn" id="signupbtn">Sign Up</button>
+            </form>
+        </section>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>
