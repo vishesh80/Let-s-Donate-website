@@ -4,6 +4,9 @@ const name = document.getElementById("name");
 const address= document.getElementById("address");
 const loc = document.getElementById("loc");
 
+const searchbar = document.getElementById("searchbar");
+const query = document.getElementById("text");
+const toserch = document.getElementById("tosearch");
 
 const eventname = document.getElementById("eventName");
 const eventtime = document.getElementById("eventTime");
@@ -388,6 +391,26 @@ function validDate()
   return true;
 }
 /*---------------------------------Listeners ------------------------------------------------- */
+
+
+
+searchbar.addEventListener("click", event => {
+
+  if (event.target.id === "user") {
+    localStorage.setItem("Q", "Uquery");
+    toserch.click();
+  }
+  else if (event.target.id === "ngo") {
+    localStorage.setItem("Q", "Nquery");
+    toserch.click();
+  }
+  else if (event.target.id === "search") {
+    if (/^[A-Za-z\s\.]+$/.test(query.value.trim()) && query.value.trim().length < 100) {
+      localStorage.setItem("Q", query.value.trim());
+      toserch.click();
+    }
+  }
+});
 
 
 logoutBtn.addEventListener("click", event => {

@@ -27,7 +27,7 @@
 {
     .cont
     {
-        grid-template-rows: 80px 400px 400px;
+        grid-template-rows: 80px 490px 400px;
         grid-auto-rows: auto;
     }
 }
@@ -50,7 +50,7 @@ header
 }
 #user,#ngo
 {
-    width: 10%;
+    width: 12.5%;
 }
 #search
 {
@@ -58,7 +58,7 @@ header
 }
 #text
 {
-    width: 65%;
+    width: 60%;
     padding-left: 1em;
 }
 #user,#ngo,#text,#search,#logout
@@ -67,9 +67,8 @@ header
 }
 #ngo
 {
-    border-left: gainsboro solid 2px;
+    border-left: rgba(128, 128, 128, 0.479) solid 1px !important;
 }
-
 .burger
 {
     position: relative;

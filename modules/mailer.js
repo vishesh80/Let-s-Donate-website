@@ -4,11 +4,11 @@ async function mail(data)
 {
     let TR = nodemailer.createTransport({
         service: 'gmail',
-        auth: { user:'guptaarnav890@gmail.com', pass: String(process.env.PASS)}
+        auth: { user:'letsdonate1998@gmail.com', pass: String(process.env.PASS)}
     });
 
     let mailInfo = {
-      from: "Let's Donate",
+    from: "letsdonate1998@gmail.com",
       to: data.email,
       subject: "OTP (LET's DONATE)",
       text: "\n\nOTP: " + data.number,
@@ -28,12 +28,12 @@ async function mail(data)
 async function getmail(data) {
     let TR = nodemailer.createTransport({
         service: 'gmail',
-        auth: { user: 'guptaarnav890@gmail.com', pass: String(process.env.PASS) }
+        auth: { user: 'letsdonate1998@gmail.com', pass: String(process.env.PASS) }
     });
 
     let mailInfo = {
         from: data.email,
-        to: 'guptaarnav890@gmail.com',
+        to: 'letsdonate1998@gmail.com',
         subject: "Contact (LET's DONATE)",
         text: 'Name : ' + data.name + '\n\nEmail : '+ data.email+'\n\n\n'+data.desc+'',
     };

@@ -3,6 +3,9 @@ const email = document.getElementById("email");
 const desc = document.getElementById("desc");
 const sendbtn = document.getElementById("btn");
 
+const burger = document.getElementById("burger");
+const menudiv = document.getElementById("rnav");
+
 
 sendbtn.addEventListener("click",send);
 
@@ -59,3 +62,20 @@ function clearInput()
     desc.value = "";
     email.value = "";
 }
+
+
+burger.addEventListener("click", event => {
+
+    console.log("clicked");
+    menudiv.classList.toggle("toggle");
+    event.stopPropagation();
+});
+
+window.addEventListener("click", event => {
+
+    menudiv.classList.remove("toggle");
+});
+window.addEventListener("resize", event => {
+
+    menudiv.classList.remove("toggle");
+});

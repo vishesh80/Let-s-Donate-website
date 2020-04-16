@@ -44,14 +44,14 @@ header
 header div
 {
     width: 50%;
-    min-width: 320px;
+    min-width: 310px;
     height: 40%;
     
     display: flex;
 }
 #user,#ngo
 {
-    width: 10%;
+    width: 12.5%;
 }
 #search
 {
@@ -59,7 +59,7 @@ header div
 }
 #text
 {
-    width: 65%;
+    width: 60%;
     padding-left: 1em;
 }
 #user,#ngo,#text,#search,#logout
@@ -68,7 +68,7 @@ header div
 }
 #ngo
 {
-    border-left: gainsboro solid 2px;
+    border-left: rgba(0, 0, 0, 0.219) solid 1px;
 }
 .burger
 {
