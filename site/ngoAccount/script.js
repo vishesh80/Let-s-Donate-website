@@ -20,6 +20,10 @@ const maploc = document.getElementById("maploc");
 const fileInput = document.getElementById("file");
 const logoutBtn = document.getElementById("logout");
 
+const modal = document.getElementById('modal');
+const modalBtn = document.getElementById('modalBtn');
+const modalInput = document.getElementById("modalInput");
+
 const created = document.getElementById("created");
 
 const canvas_1 = document.getElementById("canvas_1");
@@ -271,10 +275,13 @@ async function varify()
 
     if(res.status === 200)
     {
-        let otp = prompt("Please Varify your Email.\nEnter the OTP sent to your Email address");
+      modal.classList.toggle("on");
+
+      let otp = await new Promise((res, rej) => modalBtn.addEventListener('click', e => res(modalInput.value)));
 
         if (Number(otp) === number)
         {
+          modal.classList.toggle("on");
           varified();
           return;
         } 

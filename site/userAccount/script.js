@@ -16,11 +16,12 @@ const searchbar = document.getElementById("searchbar");
 const query = document.getElementById("text");
 const toserch = document.getElementById("tosearch");
 
+const modal = document.getElementById('modal');
+const modalBtn = document.getElementById('modalBtn');
+const modalInput = document.getElementById("modalInput");
 
 
 checkToken();
-startmap();
- 
 
 
 
@@ -42,8 +43,7 @@ function startmap()
       }
     ).addTo(mymap);
 
-  let data = {token : localStorage.getItem("token")}
-
+  let data = {token : localStorage.getItem("token")};
 
 
   fetch("/api/getlocations", {
@@ -88,7 +88,6 @@ function startmap()
         .openPopup();
       
       if(localStorage.getItem("flag")) setTimeout(() => {
-        console.log("here");
         alert("Your Location can be inaccurate.\nIf system doesn't have GPS.");
         localStorage.removeItem("flag");
       },500);
@@ -106,7 +105,7 @@ function startmap()
 
 
 
-function checkToken() {
+ function checkToken() {
   fetch("/account/user", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -124,6 +123,7 @@ function checkToken() {
     })
     .then(async data => {
       if(!data.isV) await varify();
+      startmap();
       name.textContent = data.username;
       age.textContent = data.age+" years old";
       loc.textContent = data.state+", "+data.city;
@@ -177,7 +177,9 @@ function getevents() {
 
 
 async function varify() {
+
   let number = Math.floor(Math.random() * 11345);
+
   let vdata = {
     token: localStorage.getItem("token"),
     number: number,
@@ -190,23 +192,25 @@ async function varify() {
   });
 
   if (res.status === 200) {
-    let otp = prompt(
-      "Please Varify your Email.\nEnter the OTP sent to your Email address"
-    );
+
+    modal.classList.toggle("on");
+
+    let otp = await new Promise((res,rej) => modalBtn.addEventListener('click',e => res(modalInput.value)));
 
     if (Number(otp) === number) {
+      modal.classList.toggle("on");
       varified();
       return;
     } else {
       localStorage.removeItem("token");
-      window.location.replace("../NGOlogin/NGOlogin.html");
+      window.location.replace("../userlogin/userlogin.html");
       throw new Error("Varification Failed");
     }
   } else {
     let text = await res.text();
     alert(text);
     localStorage.removeItem("token");
-    window.location.replace("../NGOlogin/NGOlogin.html");
+    window.location.replace("../userlogin/userlogin.html");
     throw new Error(text);
   }
 }
